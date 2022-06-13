@@ -13,10 +13,10 @@ NOTE: In order to earn points, methods must be tested appropriately and implemen
 ## Iteration 1 - Ingredient and Pantry
 
 There are **4** Possible Points in Iteration 1:
-1. Ingredient Creation - including all attr_readers
-2. Pantry Creation - including all attr_readers
-3. Pantry #stock_check
-4. Pantry #restock
+1. `Ingredient` Creation - including all attr_readers
+2. `Pantry` Creation - including all attr_readers
+3. `Pantry` #stock_check
+4. `Pantry` #restock
 
 Use TDD to build an `Ingredient` and a `Pantry` class that respond to the interaction pattern below:
 
@@ -67,12 +67,11 @@ pry(main)> pantry.stock_check(ingredient2)
 ## Iteration 2 - Recipe and CookBook
 
 There are **4** possible points in Iteration 2:
-1. Recipe and CookBook Creation - including all attr_readers
-2. Recipe #add_ingredient
+1. `Recipe` and `CookBook` Creation - including all attr_readers
+2. `Recipe` #add_ingredient
   - For the `add_ingredient` method, the first argument is an `Ingredient`, and the second argument is the amount of the ingredient required for the `Recipe`.
-3. Recipe #ingredients
-4. CookBook #add_recipe
-
+3. `Recipe` #ingredients
+4. `CookBook` #add_recipe
 
 Use TDD to build a `Recipe` class and a `CookBook` class that respond to the following interaction pattern.
 
@@ -129,11 +128,11 @@ pry(main)> cookbook.recipes
 ## Iteration 3
 
 There are **4** possible points in Iteration 3:
-1. Recipe #total_calories
+1. `Recipe` #total_calories
   - The `total_calories` method should sum the calories of each ingredient. The calories for each ingredient can be calculated by multiplying the `calories` attribute of the Ingredient by the amount of the ingredient required for the recipe.
-2. CookBook #ingredients
-3. CookBook #highest_calorie_meal
-4. Pantry #enough_ingredients_for
+2. `CookBook` #ingredients
+3. `CookBook` #highest_calorie_meal
+4. `Pantry` #enough_ingredients_for
 
 Use TDD to update your `Recipe`, `CookBook` and `Pantry` classes so that they respond to the following interaction pattern:
 
