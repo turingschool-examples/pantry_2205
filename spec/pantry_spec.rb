@@ -19,4 +19,8 @@ RSpec.describe Pantry do
   it 'exists' do
     expect(@pantry).to be_a(Pantry)
   end
-end 
+
+  it 'has attributes' do
+    expect(@pantry.stock).to eq({})
+  end
+end
