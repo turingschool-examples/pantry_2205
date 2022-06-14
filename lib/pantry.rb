@@ -25,7 +25,7 @@ class Pantry
   end
 
   def enough_ingredients_for?(recipe)
-    recipe.ingredients_required.all? {|ingredient,amount| stock_check(ingredient) > amount}
+    recipe.ingredients_required.all? {|ingredient,amount| stock_check(ingredient) >= amount}
   end
 
 end
