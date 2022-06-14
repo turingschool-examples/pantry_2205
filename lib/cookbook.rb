@@ -18,4 +18,14 @@ class CookBook
     end
     ingredient_names.uniq
   end
+
+  def highest_calorie_meal
+    answer_in_numbers = []
+    @recipes.each do |recipe_instance|
+      answer_in_numbers << recipe_instance.total_calories
+    end
+    @recipes.find do |recipe_instance|
+      recipe_instance.total_calories == answer_in_numbers.sort.reverse[0]
+    end
+  end
 end
