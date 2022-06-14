@@ -1,9 +1,9 @@
-class class_name
-    attr_reader :name, :unit, :calories
+require './lib/helper'
+
+RSpec.describe 'Ingredient' do
+    let!(:cheese) { Ingredient.new({name: "Cheese", unit: "oz", calories: 50}) }
     
-    def initialize(name, unit, calories)
-        @name = name
-        @unit = unit
-        @calories = calories
+    it 'exists' do
+        expect(cheese).to be_instance_of(Ingredient)
     end
 end
