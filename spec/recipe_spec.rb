@@ -20,4 +20,18 @@ RSpec.describe Recipe do
       expect(@recipe1.ingredients_required).to eq ({})
     end
   end
+
+  describe '#add_ingredient' do
+    it 'can add necessary Ingredient objects to a recipe' do
+      @recipe1.add_ingredient(@ingredient1, 2)
+      @recipe1.add_ingredient(@ingredient1, 4)
+      @recipe1.add_ingredient(@ingredient2, 8)
+      expect(@recipe1.ingredients_required).to eq (
+        {
+          @ingredient1 => 6,
+          @ingredient2 => 8
+        }
+      )
+    end
+  end
 end
