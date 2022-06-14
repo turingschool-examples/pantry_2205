@@ -16,9 +16,7 @@ class Pantry
 
   def enough_ingredients_for?(recipe)
     rec_hash = recipe.ingredients_required
-    enough_array = rec_hash.map do |ing,amt|
-      @stock[ing] >= amt
-    end
+    enough_array = rec_hash.map { |ing,amt| @stock[ing] >= amt }
     if enough_array.all? { |bool| bool == true }
       true
     else
