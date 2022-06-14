@@ -45,15 +45,15 @@ class CookBook
         i[:ingredient] = key.name
         i[:amount] = (recipe.ingredients_required[key].to_s).concat(key.unit)
         details_array << i
-        require "pry"; binding.pry
         h[:details] = details_array
+        h[:total_calories] = recipe.total_calories
       end
-
+      summary_hash << h
     end
-      # recipe.ingredients_required.each do |ingredient|
-      #   i[:amount] = ingredient.value.to_s
-      # end
-      # h[:details] = {:ingredients=>[]}
-      # summary_hash<< h
+    summary_hash.sort {|values| values[:total_calories]}
+  end
+
+  def time
+
   end
 end
