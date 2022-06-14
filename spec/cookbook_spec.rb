@@ -59,7 +59,7 @@ RSpec.describe CookBook do
     @cookbook.add_recipe(@recipe1)
     @cookbook.add_recipe(@recipe2)
 
-    expect(@cookbook.highest_calories_meal).to eq(@recipe2)
+    expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
   end
 
 end
