@@ -35,12 +35,25 @@ class CookBook
   end
 
   def summary
-    
+    summary_hash = []
+    @recipes.each do |recipe|
+      h = Hash.new(0)
+      h[:name]=recipe.name
+      details_array = []
+      recipe.ingredients_required.keys.each do |key|
+        i = Hash.new(0)
+        i[:ingredient] = key.name
+        i[:amount] = key.unit
+        details_array << i
+        require "pry"; binding.pry
+        h[:details] = details_array
+      end
+
+    end
+      # recipe.ingredients_required.each do |ingredient|
+      #   i[:amount] = ingredient.value.to_s
+      # end
+      # h[:details] = {:ingredients=>[]}
+      # summary_hash<< h
   end
-
-  def date
-
-  end
-
-
 end

@@ -74,7 +74,7 @@ RSpec.describe CookBook do
     expect(@cookbook.summary).to eql([{:name=>"Mac and Cheese", :details=>{:ingredients=>[{:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}], :total_calories=>440}}, {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}])
   end
 
-  it 'returns the time the cookbook was created' do
+  xit 'returns the time the cookbook was created' do
     expect(@cookbook.date).to eql()
   end
 
