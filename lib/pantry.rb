@@ -2,9 +2,10 @@ require 'ingredient'
 
 class Pantry
 
-  attr_reader
+  attr_reader :stock
 
   def initialize
+    @stock = {}
   end
 
 end
