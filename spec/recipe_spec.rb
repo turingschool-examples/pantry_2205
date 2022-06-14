@@ -23,4 +23,9 @@ RSpec.describe Recipe do
     expect(@recipe1).to be_a(Recipe)
     expect(@recipe2).to be_a(Recipe)
   end
+
+  it 'has attributes' do
+    expect(@recipe1.name).to eq("Mac and Cheese")
+    expect(@recipe2.name).to eq("Cheese Burger")
+  end
 end
