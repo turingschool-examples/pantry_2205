@@ -28,7 +28,7 @@ RSpec.describe Recipe do
       expect(@recipe1.ingredients_required).to eq({@ingredient1=>6, @ingredient2=>8})
     end
 
-    xit "can make an array of all ingredients" do
+    it "can make an array of all ingredients" do
       expect(@recipe1.ingredients).to eq([@ingredient1, @ingredient2])
     end
 	end
