@@ -3,8 +3,8 @@ class Ingredient
               :unit,
               :calories
   def initialize(data)
-     @name = data[:name]
-     @unit = data[:unit]
-     @calories = data[:calories]
+    @name = data[:name]
+    @unit = data[:unit]
+    @calories = data[:calories]
   end
 end
