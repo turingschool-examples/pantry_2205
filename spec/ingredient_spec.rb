@@ -12,3 +12,4 @@ RSpec.describe Ingredient do
   it 'exists' do
     expect(@ingredient1).to be_a(Ingredient)
   end
+end 
