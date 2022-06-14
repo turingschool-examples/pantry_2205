@@ -48,7 +48,7 @@ RSpec.describe 'Pantry' do
         pantry.restock(less_macaroni, 7)
         expect(pantry.enough_ingredients?(mac)).to eq(false)
         pantry.restock(less_macaroni, 1)
-        require 'pry'; binding.pry 
+        # require 'pry'; binding.pry 
         expect(pantry.enough_ingredients?(mac)).to eq(true)
     end
 end
