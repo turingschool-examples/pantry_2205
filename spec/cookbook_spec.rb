@@ -1,4 +1,5 @@
 require "rspec"
+require "./lib/ingredient"
 require "./lib/recipe"
 require "./lib/cookbook"
 
@@ -34,6 +35,11 @@ RSpec.describe CookBook do
       end
 
       it "can tell all ingredients in recipes" do
+        @recipe1.add_ingredient(@ingredient1, 2)
+        @recipe1.add_ingredient(@ingredient2, 8)
+        @recipe2.add_ingredient(@ingredient1, 2)
+        @recipe2.add_ingredient(@ingredient3, 4)
+        @recipe2.add_ingredient(@ingredient4, 1)
         @cookbook.add_recipe(@recipe1)
         @cookbook.add_recipe(@recipe2)
 
