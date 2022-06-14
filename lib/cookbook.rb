@@ -4,9 +4,10 @@ require './lib/recipe'
 
 class CookBook
 
-  attr_reader
+  attr_reader :recipes
 
   def initialize
+    @recipes = []
   end
 
 end
