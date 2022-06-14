@@ -7,5 +7,5 @@ RSpec.describe 'Recipe' do
 
     it 'exists' do
         expect(mac).to be_instance_of(Recipe)
-    end
+    end 
 end
