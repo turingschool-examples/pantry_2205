@@ -20,4 +20,11 @@ class Recipe
      @ingredients_required.map {|item,quantity| item.name}
     # shopping_list
   end
+
+  def total_calories
+    total = 0
+    cal_per_item = @ingredients_required.map { |item, quantity|total += (item.calories * quantity)  }
+    total
+  end
+
 end
