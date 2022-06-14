@@ -1,7 +1,7 @@
 require './lib/ingredient'
 require './lib/pantry'
 require './lib/recipe'
-require './lib/cookbook'
+require './lib/cook_book'
 
 RSpec.describe CookBook do
   before :each do
