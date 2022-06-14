@@ -43,7 +43,7 @@ class CookBook
       recipe.ingredients_required.keys.each do |key|
         i = Hash.new(0)
         i[:ingredient] = key.name
-        i[:amount] = key.unit
+        i[:amount] = (recipe.ingredients_required[key].to_s).concat(key.unit)
         details_array << i
         require "pry"; binding.pry
         h[:details] = details_array
