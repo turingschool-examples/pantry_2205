@@ -1,5 +1,4 @@
 require './lib/ingredient'
-require './lib/pantry'
 require './lib/recipe'
 
 RSpec.describe Recipe do
@@ -14,7 +13,6 @@ RSpec.describe Recipe do
       unit: "oz",
       calories: 30
       })
-    @pantry = Pantry.new
     @recipe1 = Recipe.new("Mac and Cheese")
     @recipe2 = Recipe.new("Cheese Burger")
   end
