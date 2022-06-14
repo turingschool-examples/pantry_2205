@@ -14,4 +14,19 @@ RSpec.describe Recipe do
   it 'exists' do
     expect(@recipe1).to be_a(Recipe)
   end
+
+  it "returns attributes" do
+    expect(@recipe1.name).to eq("Mac and Cheese")
+    expect(@recipe1.ingredients_required).to eq({})
+  end
+
+  it "can return recipe ingredients" do
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient1, 4)
+    @recipe1.add_ingredient(@ingredient2, 8)
+    expect(@recipe1.ingredients_required.count).to eq(2)
+    expect(@recipe1.ingredients.count).to eq(2)
+  end
+
+
 end
