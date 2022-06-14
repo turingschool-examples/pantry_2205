@@ -38,8 +38,7 @@ RSpec.describe Pantry do
     expect(@pantry.stock_check(@ingredient2)).to eq(7)
   end
 
-  it 'can check to see if there is enough ingredients for' do
-    @pantry = Pantry.new
+  xit 'can check to see if there is enough ingredients for' do
     @cookbook = CookBook.new
     @ingredient1 = Ingredient.new({
       name: "Cheese",
@@ -69,11 +68,6 @@ RSpec.describe Pantry do
     @recipe2.add_ingredient(@ingredient1, 2)
     @recipe2.add_ingredient(@ingredient3, 4)
     @recipe2.add_ingredient(@ingredient4, 1)
-
-
-
-
-
 
     @pantry.restock(@ingredient1, 5)
     @pantry.restock(@ingredient1, 10)

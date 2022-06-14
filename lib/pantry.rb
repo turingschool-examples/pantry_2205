@@ -22,7 +22,19 @@ class Pantry
     end
   end
 
-  def enough_ingredients_for?(recipe)
-
+  def enough_ingredients_for?(recipe) #cannot get @stock[ingredient_instance.flatten to return a single array to use to get the value/integer]
+    answer = []
+    recipe.ingredients_required.each do |ingredient_instance|
+      if @stock[ingredient_instance.flatten] >= ingredient_instance[1]
+        answer << true
+      else
+        answer << false
+      end
+    end
+    if answer.include?(false)
+      false
+    else
+      true
+    end
   end
 end
