@@ -13,5 +13,10 @@ class Pantry
     @stock[ingredient] += qty
   end
 
-
+  def enough_ingredients_for?(recipe)
+    qty_needed = recipe.ingredients_required.values
+    current_qty = @stock.values
+    return true if current_qty == qty_needed
+    false
+  end
 end
