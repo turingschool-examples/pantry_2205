@@ -19,4 +19,14 @@ class Pantry
       @stock[ingredient] += amount
     end
   end
+
+  def enough_ingredients_for?(recipe)
+    recipe.ingredients_required.each do |ingredients, amount|
+      if amount > @stock[ingredients]
+        return true
+      # else
+      #   return false
+      end
+    end
+  end
 end
