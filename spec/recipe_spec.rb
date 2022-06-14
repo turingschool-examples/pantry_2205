@@ -39,5 +39,4 @@ RSpec.describe 'Recipe' do
         expect(burger.total_calories).to eq(675)
     end
 
-
 end

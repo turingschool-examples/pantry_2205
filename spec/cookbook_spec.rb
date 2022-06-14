@@ -10,6 +10,28 @@ RSpec.describe 'Cookbook' do
     let!(:mac) { Recipe.new("Mac and Cheese") }
     let!(:burger) { Recipe.new("Cheese Burger") }
     let!(:cookbook) { Cookbook.new }
+    let!(:summary) {[{
+        :name=>"Mac and Cheese", 
+        :details=>{
+            :ingredients=>[{
+                :ingredient=>"Cheese", 
+                :amount=>"2 C"}, 
+                {:ingredient=>"Macaroni", 
+                :amount=>"8 oz"}], 
+            :total_calories=>440
+        }}, 
+        {:name=>"Cheese Burger", 
+        :details=>{
+            :ingredients=>[{
+                :ingredient=>"Cheese", 
+                :amount=>"2 C"},
+                {:ingredient=>"Ground Beef", 
+                :amount=>"4 oz"}, 
+                {:ingredient=>"Bun", 
+                :amount=>"1 g"
+            }], 
+            :total_calories=>675
+    }}]}
 
     it 'exists' do
         expect(cookbook).to be_instance_of(Cookbook)
@@ -62,25 +84,6 @@ RSpec.describe 'Cookbook' do
         burger.add_ingredient(beef, 4)
         burger.add_ingredient(bun, 1)
         cookbook.add_recipe(burger)
-        expect(cookbook.summary).to eq([{
-            :name=>"Mac and Cheese", 
-            :details=>{
-                :ingredients=>[{
-                    :ingredient=>"Macaroni", 
-                    :amount=>"8 oz"}, 
-                    {:ingredient=>"Cheese", 
-                    :amount=>"2 C"}], 
-                :total_calories=>440
-            }}, 
-            {:name=>"Burger", 
-            :details=>{
-                :ingredients=>[{
-                    :ingredient=>"Ground Beef", 
-                    :amount=>"4 oz"}, 
-                    {:ingredient=>"Bun", 
-                    :amount=>"100 g"
-                }], 
-                :total_calories=>500
-        }}])
+        expect(cookbook.summary).to eq(summary)
     end
 end

@@ -19,11 +19,16 @@ class Cookbook
     end
 
     def summary
-        hash = {}
+        accumulate = [].sort
         @recipes.map do |recipe| 
+            hash = {}
+            # require 'pry'; binding.pry 
             hash[:name] = recipe.name
             hash[:details] = {ingredients: recipe.format_ingredients, total_calories: recipe.total_calories}
+            accumulate << hash
         end
-        # hash.sort_by {|details| hash.dig(:details, :total_calories)}
+        accumulate.flatten
+        
+        
     end
 end
