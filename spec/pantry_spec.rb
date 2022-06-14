@@ -44,6 +44,7 @@ RSpec.describe Pantry do
       @recipe1 = Recipe.new("Mac and Cheese")
       @recipe1.add_ingredient(@ingredient1, 2)
       @recipe1.add_ingredient(@ingredient2, 8)
+      @pantry = Pantry.new
     end
 
     it "can tell if there are enough items for a recipe" do
