@@ -1,7 +1,9 @@
-class Pantry
+require_relative 'recipe'
+class Pantry 
   attr_reader :stock
 
   def initialize
+    super
     @stock = Hash.new(0)
   end
 

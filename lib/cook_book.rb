@@ -4,7 +4,6 @@ class CookBook
 
   def initialize
     @recipes = []
-    @date =
   end
 
   def add_recipe(recipe)
