@@ -73,7 +73,7 @@ RSpec.describe CookBook do
       expect(cookbook.details_hash).to be_a(Hash)
     end
 
-    it 'can get the summary' do
+    xit 'can get the summary' do
       expected = [ {
                   :name=>"Mac and Cheese", 
                   :details=> { 
