@@ -74,4 +74,24 @@ RSpec.describe Recipe do
     expect(@recipe2.total_calories).to eq(675)
   end
 
+  it 'returns recipe_summary' do
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient2, 8)
+
+    @recipe2.add_ingredient(@ingredient1, 2)
+    @recipe2.add_ingredient(@ingredient3, 4)
+    @recipe2.add_ingredient(@ingredient4, 100)
+
+    expect(@recipe1.recipe_summary).to eq({
+      :name=>"Mac and Cheese",
+      :details=> {
+          :ingredients=> [{
+            :ingredient=>"Macaroni",
+            :amount=>"8 oz"},
+            {:ingredient=>"Cheese",
+            :amount=>"2 C"}],
+          :total_calories=>440}
+          })
+  end
+
 end
