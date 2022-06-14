@@ -27,4 +27,8 @@ RSpec.describe CookBook do
     expect(@cookbook).to be_instance_of(CookBook)
   end
 
+  it 'initializes with empty array of recipes' do
+    expect(@cookbook.recipes).to eq([])
+  end
+
 end
