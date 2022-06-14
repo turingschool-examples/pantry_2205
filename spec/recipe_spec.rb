@@ -2,7 +2,9 @@ require './lib/helper'
 
 RSpec.describe 'Recipe' do
     let!(:cheese) { Ingredient.new({name: "Cheese", unit: "oz", calories: 50}) }
+    let!(:c_cheese) { Ingredient.new({name: "Cheese", unit: "C", calories: 100}) }
     let!(:macaroni) { Ingredient.new({name: "Macaroni", unit: "oz", calories: 200}) }
+    let!(:less_macaroni) { Ingredient.new({name: "Macaroni", unit: "oz", calories: 30}) }
     let!(:mac) { Recipe.new("Mac and Cheese") }
 
     it 'exists' do
@@ -24,4 +26,9 @@ RSpec.describe 'Recipe' do
         expect(mac.ingredients_required).to eq({cheese => 6, macaroni => 8})
     end
 
+    it 'has a total calories' do
+        mac.add_ingredient(c_cheese, 2)
+        mac.add_ingredient(less_macaroni, 8)
+        expect(mac.total_calories).to eq(440)
+    end
 end
