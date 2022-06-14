@@ -6,7 +6,6 @@ class Pantry
   end
 
   def stock_check(ingredient)
-    # require "pry"; binding.pry
     if @stock[ingredient] == nil
       @stock[ingredient] = 0
     else
