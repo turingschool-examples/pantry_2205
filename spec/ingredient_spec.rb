@@ -1,4 +1,4 @@
-require 'ingredient'
+require './lib/ingredient'
 
 RSpec.describe Ingredient do
   before(:each) do
