@@ -2,7 +2,7 @@ require 'rspec'
 require './lib/pantry'
 require './lib/ingredient'
 require './lib/recipe'
-require './lib/cookbook'
+require './lib/cook_book'
 
 RSpec.describe CookBook do
 	before :each do
@@ -16,8 +16,8 @@ RSpec.describe CookBook do
   end
 
   it 'can add recipes' do
-    cookbook.add_recipe(@recipe1)
-    cookbook.add_recipe(@recipe2)
+    @cookbook.add_recipe(@recipe1)
+    @cookbook.add_recipe(@recipe2)
     expect(@cookbook.recipes).to eq([@recipe1, @recipe2])
   end
 end
