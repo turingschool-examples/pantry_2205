@@ -10,7 +10,7 @@ class Pantry
   def stock_check(ingredient)
     count = 0
     if @stock.keys.include?(ingredient)
-      count = @stock.find {|ingredient| ingredient.count}
+      return @stock[ingredient]
     end
     count
   end
