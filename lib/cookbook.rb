@@ -1,5 +1,5 @@
 class CookBook
-  attr_reader 
+  attr_reader
 
   def initialize
     @recipe_index = []
@@ -13,4 +13,8 @@ class CookBook
     @recipe_index.map { |recipe| recipe.name  }
   end
 
+  def ingredients
+    @recipe_index.map { |recipe| recipe.ingredients  }
+
+  end
 end

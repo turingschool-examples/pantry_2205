@@ -16,9 +16,7 @@ class Recipe
   end
 
   def ingredients
-    # shopping_list = []
-     @ingredients_required.map {|item,quantity| item.name}
-    # shopping_list
+   @ingredients_required.map {|item,quantity| item.name}
   end
 
   def total_calories
