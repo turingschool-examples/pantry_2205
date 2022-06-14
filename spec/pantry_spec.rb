@@ -23,4 +23,8 @@ RSpec.describe Pantry do
   it 'has attributes' do
     expect(@pantry.stock).to eq({})
   end
+
+  it 'can check stock' do
+    expect(@pantry.stock_check(@ingredient1)).to eq(0)
+  end
 end
