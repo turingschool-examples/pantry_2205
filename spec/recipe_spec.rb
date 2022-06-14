@@ -12,5 +12,9 @@ RSpec.describe 'Recipe' do
     it 'has a name' do
         expect(mac.name).to eq("Mac and Cheese")
     end
-    
+
+    it 'has required ingredients' do
+        expect(mac.ingredients_required).to eq({})
+    end
+
 end

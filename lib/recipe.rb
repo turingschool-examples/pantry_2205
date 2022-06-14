@@ -1,8 +1,8 @@
 class Recipe
-    attr_reader :name, :required_ingredients
+    attr_reader :name, :ingredients_required
 
     def initialize(name)
         @name = name
-        @required_ingredients = {}
+        @ingredients_required = {}
     end
 end
