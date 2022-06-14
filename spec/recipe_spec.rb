@@ -19,5 +19,17 @@ RSpec.describe Recipe do
 			expect(@recipe1.name).to eq(("Mac and Cheese"))
       expect(@recipe1.ingredients_required).to eq({})
     end
+
+    it "can add ingredients to required" do
+      @recipe1.add_ingredient(@ingredient1, 2)
+      @recipe1.add_ingredient(@ingredient1, 4)
+      @recipe1.add_ingredient(@ingredient2, 8)
+
+      expect(@recipe1.ingredients_required).to eq({@ingredient1=>6, @ingredient2=>8})
+    end
+
+    xit "can make an array of all ingredients" do
+      expect(@recipe1.ingredients).to eq([@ingredient1, @ingredient2])
+    end
 	end
 end
