@@ -12,4 +12,18 @@ RSpec.describe 'Pantry' do
     it 'has stock' do
         expect(pantry.stock).to eq({})
     end
+    
+    it 'can check stock' do
+        expect(pantry.stock).to eq({})
+        expect(pantry.stock_check(cheese)).to eq(nil)
+        pantry.restock(cheese, 5)
+        expect(pantry.stock_check(cheese)).to eq(5)
+        pantry.restock(cheese, 10)
+        expect(pantry.stock_check(cheese)).to eq(15)
+    end
+
+    it 'can stock ingredients' do
+        pantry.restock(cheese)
+        expect(pantry.stock_check(cheese)).to eq({cheese => 0})
+    end
 end
