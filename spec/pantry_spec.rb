@@ -43,11 +43,12 @@ RSpec.describe 'Pantry' do
         expect(burger.ingredients_required).to eq({c_cheese => 2, beef => 4, bun => 1})   
         expect(pantry.enough_ingredients?(mac)).to eq(false)
         pantry.restock(c_cheese, 5)
-        pantry.restock(less_macaroni, 10)
+        pantry.restock(c_cheese, 10)
         expect(pantry.enough_ingredients?(mac)).to eq(false)
         pantry.restock(less_macaroni, 7)
         expect(pantry.enough_ingredients?(mac)).to eq(false)
         pantry.restock(less_macaroni, 1)
+        require 'pry'; binding.pry 
         expect(pantry.enough_ingredients?(mac)).to eq(true)
     end
 end
