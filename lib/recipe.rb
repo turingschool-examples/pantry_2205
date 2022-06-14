@@ -14,4 +14,8 @@ class Recipe
       @ingredients_required[ingredient] += number
     end
   end
+
+  def ingredients
+    @ingredients_required.keys
+  end
 end
