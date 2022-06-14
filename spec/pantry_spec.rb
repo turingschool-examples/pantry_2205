@@ -2,6 +2,7 @@ require 'rspec'
 require './lib/ingredient'
 require './lib/recipe'
 require './lib/pantry'
+require 'pry'
 
 RSpec.describe Pantry do
 
@@ -65,6 +66,14 @@ RSpec.describe Pantry do
     @pantry.restock(@ingredient1,10)
 
     expect(@pantry.enough_ingredients_for?(@recipe1)).to be false
+
+    @pantry.restock(@ingredient2, 7)
+
+    expect(@pantry.enough_ingredients_for?(@recipe1)).to be false
+
+    @pantry.restock(@ingredient2, 1)
+
+    expect(@pantry.enough_ingredients_for?(@recipe1)).to be true
   end
 
 end
