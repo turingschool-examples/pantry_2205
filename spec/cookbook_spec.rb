@@ -5,6 +5,8 @@ require './lib/cookbook'
 
 RSpec.describe CookBook do
   before :each do
+    @pantry = Pantry.new
+    @cookbook = CookBook.new
     @ingredient1 = Ingredient.new({
       name: "Cheese",
       unit: "C",
@@ -15,10 +17,24 @@ RSpec.describe CookBook do
       unit: "oz",
       calories: 30
       })
-    @pantry = Pantry.new
+    @ingredient3 = Ingredient.new({
+      name: "Ground Beef",
+      unit: "oz",
+      calories: 100
+      })
+    @ingredient4 = Ingredient.new({
+      name: "Bun",
+      unit: "g",
+      calories: 75
+      })
     @recipe1 = Recipe.new("Mac and Cheese")
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient2, 8)
+
     @recipe2 = Recipe.new("Cheese Burger")
-    @cookbook = CookBook.new
+    @recipe2.add_ingredient(@ingredient1, 2)
+    @recipe2.add_ingredient(@ingredient3, 4)
+    @recipe2.add_ingredient(@ingredient4, 1)
   end
 
   it 'exists' do
