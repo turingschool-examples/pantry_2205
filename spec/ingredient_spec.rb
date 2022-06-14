@@ -18,4 +18,8 @@ RSpec.describe Ingredient do
     expect(@ingredient1.name).to eq("Cheese")
   end
 
+  it 'returns unit' do
+    expect(@ingredient1.unit).to eq("oz")
+  end
+
 end
