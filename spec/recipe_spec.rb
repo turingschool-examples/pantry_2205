@@ -17,21 +17,15 @@ RSpec.describe Recipe do
     expect(@recipe1.ingredients_required).to eq({})
   end
 
-  xit 'can add required ingredients to hash and return hash' do
+  it 'can add required ingredients to hash and return hash' do
     @recipe1.add_ingredient(@ingredient1, 2)
     @recipe1.add_ingredient(@ingredient1, 4)
     @recipe1.add_ingredient(@ingredient2, 8)
 
-    # recipe1.ingredients_required
-    # # => {#<Ingredient:0x00007fd7811553c8...> => 6, #<Ingredient:0x00007fd78110b0e8...> => 8}
-    #
-    # recipe1.ingredients
-    # # => [#<Ingredient:0x007fe8438c7a70...>, #<Ingredient:0x007fe843857f40...>]
+    expect(@recipe1.ingredients_required).to eq({@ingredient1 => 6, @ingredient2 => 8})
 
-
+    expect(@recipe1.ingredients).to eq(["Cheese", "Macaroni"])
 
   end
-
-
 
 end
