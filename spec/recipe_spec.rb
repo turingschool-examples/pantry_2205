@@ -8,7 +8,6 @@ RSpec.describe Recipe do
     @ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
     @ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 200})
     @recipe1 = Recipe.new("Mac and Cheese")
-    @cookbook = CookBook.new
   end
 
   it 'exists' do
@@ -17,15 +16,15 @@ RSpec.describe Recipe do
 
   it "returns attributes" do
     expect(@recipe1.name).to eq("Mac and Cheese")
-    expect(@recipe1.ingredients_required).to eq({})
+    expect(@recipe1.ingredients).to eq({})
   end
 
   it "can return recipe ingredients" do
-    @recipe1.add_ingredient(@ingredient1, 2)
-    @recipe1.add_ingredient(@ingredient1, 4)
     @recipe1.add_ingredient(@ingredient2, 8)
-    expect(@recipe1.ingredients_required.count).to eq(2)
-    expect(@recipe1.ingredients.count).to eq(2)
+    # require 'pry' ; binding.pry
+
+    expect(@recipe1.ingredients_required.count).to eq(1)
+    expect(@recipe1.ingredients.count).to eq(1)
   end
 
 
