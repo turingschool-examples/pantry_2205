@@ -33,7 +33,14 @@ RSpec.describe 'Pantry' do
         expect(pantry.stock_check(cheese)).to eq(15)
     end
 
-    it 'can tell if there are enough ingredients to make a recipe' do     
+    it 'can tell if there are enough ingredients to make a recipe' do
+        mac.add_ingredient(c_cheese, 2)
+        mac.add_ingredient(less_macaroni, 8)
+        expect(mac.ingredients_required).to eq({c_cheese => 2, less_macaroni => 8})
+        burger.add_ingredient(c_cheese, 2)
+        burger.add_ingredient(beef, 4)
+        burger.add_ingredient(bun, 1)
+        expect(burger.ingredients_required).to eq({c_cheese => 2, beef => 4, bun => 1})   
         expect(pantry.enough_ingredients?(mac)).to eq(false)
         pantry.restock(c_cheese, 5)
         pantry.restock(less_macaroni, 10)
