@@ -17,4 +17,7 @@ class Recipe
     def ingredient_names
         @ingredients_required.keys.map {|ingredient| ingredient.name}
     end
+
+
+
 end

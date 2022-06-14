@@ -2,7 +2,13 @@ require './lib/helper'
 
 RSpec.describe 'Pantry' do
     let!(:cheese) { Ingredient.new({name: "Cheese", unit: "oz", calories: 50}) }
+    let!(:c_cheese) { Ingredient.new({name: "Cheese", unit: "C", calories: 100}) }
     let!(:macaroni) { Ingredient.new({name: "Macaroni", unit: "oz", calories: 200}) }
+    let!(:less_macaroni) { Ingredient.new({name: "Macaroni", unit: "oz", calories: 30}) }
+    let!(:beef) { Ingredient.new({name: "Ground Beef", unit: "oz", calories: 100}) }
+    let!(:bun) { Ingredient.new({name: "Bun", unit: "g", calories: 75}) }
+    let!(:mac) { Recipe.new("Mac and Cheese") }
+    let!(:burger) { Recipe.new("Cheese Burger") }
     let!(:pantry) { Pantry.new }
 
     it 'exists' do
@@ -25,5 +31,16 @@ RSpec.describe 'Pantry' do
         expect(pantry.stock_check(cheese)).to eq(5)
         pantry.restock(cheese, 10)
         expect(pantry.stock_check(cheese)).to eq(15)
+    end
+
+    it 'can tell if there are enough ingredients to make a recipe' do     
+        expect(pantry.enough_ingredients?(mac)).to eq(false)
+        pantry.restock(c_cheese, 5)
+        pantry.restock(less_macaroni, 10)
+        expect(pantry.enough_ingredients?(mac)).to eq(false)
+        pantry.restock(less_macaroni, 7)
+        expect(pantry.enough_ingredients?(mac)).to eq(false)
+        pantry.restock(less_macaroni, 1)
+        expect(pantry.enough_ingredients?(mac)).to eq(true)
     end
 end
