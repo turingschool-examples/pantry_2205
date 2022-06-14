@@ -15,4 +15,15 @@ class CookBook
   end
 
 
+  def ingredients
+    all_ingredients = []
+    @recipes.each do |recipe|
+      recipe.ingredients.each do |ingredient, amount|
+        all_ingredients << ingredient.name
+      end
+    end
+    all_ingredients.uniq
+  end
+
+
 end
