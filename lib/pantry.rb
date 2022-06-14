@@ -7,18 +7,18 @@ class Pantry
 
   def stock_check(ingredient)
     # require "pry"; binding.pry
-    if @stock[ingredient.name] == nil
-      @stock[ingredient.name] = 0
+    if @stock[ingredient] == nil
+      @stock[ingredient] = 0
     else
-      @stock[ingredient.name]
+      @stock[ingredient]
     end
   end
 
   def restock(ingredient, number)
-    if @stock[ingredient.name] == nil
-      @stock[ingredient.name] = number
+    if @stock[ingredient] == nil
+      @stock[ingredient] = number
     else
-      @stock[ingredient.name] += number
+      @stock[ingredient] += number
     end
   end
 end
