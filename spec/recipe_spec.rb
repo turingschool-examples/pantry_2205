@@ -42,4 +42,12 @@ RSpec.describe Recipe do
       })
   end
 
+  it 'returns list of ingredients' do
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient1, 4)
+    @recipe1.add_ingredient(@ingredient2, 8)
+
+    expect(@recipe1.ingredients).to eq([@ingredient1,@ingredient2])
+  end
+
 end
