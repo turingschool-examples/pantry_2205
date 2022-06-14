@@ -4,7 +4,7 @@ class CookBook
   def initialize
     @recipes = []
     @ingredients = []
-    @date = date = Time.now.strftime("%m-%d-%Y")
+    @date = Time.now.strftime("%m-%d-%Y")
   end
 
   def add_recipe(recipe)
