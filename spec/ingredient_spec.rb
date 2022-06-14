@@ -14,4 +14,8 @@ RSpec.describe Ingredient do
     expect(@ingredient1).to be_instance_of(Ingredient)
   end
 
+  it 'returns name' do
+    expect(@ingredient1.name).to eq("Cheese")
+  end
+
 end
