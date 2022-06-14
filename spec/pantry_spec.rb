@@ -22,4 +22,8 @@ RSpec.describe Pantry do
     expect(@pantry).to be_instance_of(Pantry)
   end
 
+  it 'initializes with empty stock hash' do
+    expect(@pantry.stock).to eq({})
+  end
+
 end
