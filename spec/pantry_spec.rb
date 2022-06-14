@@ -24,7 +24,13 @@ RSpec.describe Pantry do
     expect(@pantry.stock).to eq({})
   end
 
-  it 'can check stock' do
+  it 'can check stock if no ingredients are in stock hash' do
     expect(@pantry.stock_check(@ingredient1)).to eq(0)
+  end
+
+  it 'can restock ingredients' do
+    @pantry.restock(@ingredient1, 5)
+    @pantry.restock(@ingredient1, 10)
+    expect(@pantry.stock_check(@ingredient1)).to eq(15)
   end
 end
