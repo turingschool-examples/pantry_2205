@@ -44,6 +44,9 @@ RSpec.describe CookBook do
       @recipe2.add_ingredient(@ingredient4, 1)
       @cookbook.add_recipe(@recipe1)
       @cookbook.add_recipe(@recipe2)
+      @pantry.restock(ingredient1, 5)
+      @pantry.restock(ingredient1, 10)
+
     end
 
     it 'recipes can show total calories' do
@@ -53,6 +56,10 @@ RSpec.describe CookBook do
 
     it 'can list all ingredients' do
       expect(@cookbook.ingredients).to eq(["Cheese", "Macaroni", "Ground Beef", "Bun"])
+    end
+
+    it 'can show highest calorie meal' do
+      expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
     end
   end
 end
