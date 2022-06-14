@@ -13,4 +13,8 @@ class Recipe
     def total_calories
         @ingredients_required.sum {|ingredient, qty| ingredient.calories * qty}
     end
+
+    def ingredient_names
+        @ingredients_required.keys.map {|ingredient| ingredient.name}
+    end
 end

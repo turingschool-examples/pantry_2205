@@ -8,4 +8,8 @@ class Cookbook
     def add_recipe(recipe)
         @recipes << recipe
     end
+
+    def ingredients
+        @recipes.map {|recipe| recipe.ingredient_names}.flatten.uniq
+    end
 end

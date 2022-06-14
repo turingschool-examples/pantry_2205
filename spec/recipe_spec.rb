@@ -38,4 +38,6 @@ RSpec.describe 'Recipe' do
         burger.add_ingredient(bun, 1)
         expect(burger.total_calories).to eq(675)
     end
+
+    
 end
