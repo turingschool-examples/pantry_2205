@@ -27,7 +27,7 @@ RSpec.describe CookBook do
     end
   end
 
-  describe 'It3' do
+  describe '#It3' do
     before :each do
       @pantry = Pantry.new
       @cookbook = CookBook.new
@@ -71,7 +71,7 @@ RSpec.describe CookBook do
     end
   end
 
-  describe 'It4' do
+  describe '#It4' do
     before :each do
       @cookbook = CookBook.new
       @ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
