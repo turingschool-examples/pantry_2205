@@ -2,7 +2,7 @@ class Pantry
   attr_reader :stock
 
   def initialize
-     @stock = {}
+    @stock = {}
   end
 
   def stock_check(ingredient)
