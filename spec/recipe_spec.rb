@@ -15,7 +15,7 @@ RSpec.describe Recipe do
 			expect(@recipe).to be_a(Recipe)
 		end
 
-		it "has attributes" do
+		it "has a name, and starts with an empty hash for ingredients" do
 			expect(@recipe.name).to eq(("Mac and Cheese"))
       expect(@recipe1.ingredients_required).to eq({})
     end
