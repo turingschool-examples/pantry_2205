@@ -14,5 +14,11 @@ class Pantry
     end
   end
 
-
+  def restock(ingredient, number)
+    if @stock[ingredient.name] == nil
+      @stock[ingredient.name] = number
+    else
+      @stock[ingredient.name] += number
+    end
+  end
 end
