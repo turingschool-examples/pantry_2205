@@ -37,4 +37,16 @@ RSpec.describe CookBook do
   it 'can return the highest calorie meal' do
     expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
   end
+
+  it 'can list ingredients in order of calories' do
+    ingredient4 = Ingredient.new({name: "Bun", unit: "g", calories: 1})
+    recipe2 = Recipe.new("Burger")
+    cookbook = CookBook.new
+    recipe2.add_ingredient(@ingredient3, 4)
+    recipe2.add_ingredient(ingredient4, 100)
+    cookbook.add_recipe(@recipe1)
+    cookbook.add_recipe(recipe2)
+
+    expect(cookbook.summary).to eq([{:name=>"Mac and Cheese", :details=>{:ingredients=>[{:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}], :total_calories=>440}}, {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}])
+  end
 end
