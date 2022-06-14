@@ -12,4 +12,10 @@ class Recipe
     @ingredients << ingredient
     @ingredients.uniq!
   end
+
+  def total_calories
+    calories = @ingredients.map do |ingredient|
+      require "pry"; binding.pry
+    end
+  end
 end
