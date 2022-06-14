@@ -2,6 +2,7 @@ require 'rspec'
 require './lib/ingredient'
 require './lib/pantry'
 require './lib/recipe'
+require 'pry'
 
 RSpec.describe Recipe do
 
@@ -9,12 +10,12 @@ RSpec.describe Recipe do
     @ingredient1 = Ingredient.new({
       name: "Cheese",
       unit: "oz",
-      calories: 50})
+      calories: 100})
 
     @ingredient2 = Ingredient.new({
       name: "Macaroni",
       unit: "oz",
-      calories: 200})
+      calories: 30})
 
     @ingredient3 = Ingredient.new({
       name: "Ground Beef",
