@@ -15,4 +15,12 @@ class Pantry
 	def restock(ingredient, quantity)
 		@stock[ingredient] += quantity
 	end
+
+	def enough_ingredients_for?(recipe)
+		enough_ingredients_for = false
+		recipe.ingredients_required.each do |ingredient, quantity|
+			enough_ingredients_for = true if stock_check(ingredient) == quantity
+		end
+		return enough_ingredients_for
+	end
 end
