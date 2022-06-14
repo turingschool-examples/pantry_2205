@@ -32,4 +32,16 @@ RSpec.describe Pantry do
       expect(@pantry.stock_check(@ingredient1)).to eq 0
     end
   end
+
+  describe '#restock' do
+    it 'adds a specific ingredient and quantity to the stock hash' do
+      expect(@pantry.stock).to eq ({})
+      @pantry.restock(@ingredient1, 5)
+      expect(@pantry.stock).to eq ({ @ingredient1 => 5})
+      @pantry.restock(@ingredient1, 10)
+      expect(@pantry.stock).to eq ({ @ingredient1 => 15})
+      @pantry.restock(@ingredient2, 7)
+      expect(@pantry.stock).to eq ({ @ingredient1 => 15, @ingredient2 => 7})
+    end
+  end
 end
