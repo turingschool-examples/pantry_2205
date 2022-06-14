@@ -62,4 +62,8 @@ RSpec.describe CookBook do
     expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
   end
 
+  it 'returns date' do
+    expect(@cookbook.date).to eq("06-14-2022")
+  end
+
 end
