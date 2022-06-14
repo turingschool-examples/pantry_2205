@@ -5,8 +5,8 @@ RSpec.describe Ingredient do
   before :each do
     @ingredient1 = Ingredient.new(
       {
-        name: "Cheese",
-        unit: "oz",
+        name: 'Cheese',
+        unit: 'oz',
         calories: 50
         }
       )

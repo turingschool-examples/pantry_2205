@@ -3,14 +3,14 @@ require './lib/pantry'
 RSpec.describe Pantry do
   before :each do
     @ingredient1 = Ingredient.new(
-      { name: "Cheese",
-        unit: "oz",
+      { name: 'Cheese',
+        unit: 'oz',
         calories: 50
       }
     )
     @ingredient2 = Ingredient.new(
-      { name: "Macaroni",
-        unit: "oz",
+      { name: 'Macaroni',
+        unit: 'oz',
         calories: 200
       }
     )
