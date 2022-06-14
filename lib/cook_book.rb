@@ -8,4 +8,12 @@ class CookBook
   def add_recipe(recipe)
     @recipes << recipe
   end
+
+  def ingredients
+    @recipes.map do |recipe|
+      recipe.ingredients_required.keys.map do |ingredient|
+        ingredient.name
+      end
+    end.flatten.uniq
+  end
 end
