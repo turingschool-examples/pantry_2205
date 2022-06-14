@@ -23,4 +23,8 @@ RSpec.describe Recipe do
     expect(@recipe1).to be_instance_of(Recipe)
   end
 
+  it 'returns name' do
+    expect(@recipe1.name).to eq("Mac and Cheese")
+  end
+
 end
