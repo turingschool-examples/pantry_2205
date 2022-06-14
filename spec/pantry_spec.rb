@@ -1,5 +1,7 @@
-require './lib/ingredient'
 require './lib/pantry'
+require './lib/ingredient'
+require './lib/recipe'
+require './lib/cook_book'
 
 RSpec.describe Pantry do
   before :each do
@@ -27,4 +29,13 @@ RSpec.describe Pantry do
     expect(@pantry.stock_check(@ingredient2)).to eq(7)
   end
 
+  xit 'can check the pantry for enough ingredients for the recipe' do
+    @pantry.restock(@ingredient1, 5)
+    @pantry.restock(@ingredient1, 10)
+    expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(false)
+    @pantry.restock(@ingredient2, 7)
+    expect(@pantry.enough_ingredients_for?(@recipe2)).to eq(false)
+    @pantry.restock(@ingredient2, 1)
+    expect(@pantry.enough_ingredients_for?(@recipe2)).to eq(true)
+  end
 end

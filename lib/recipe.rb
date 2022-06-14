@@ -13,6 +13,7 @@ class Recipe
     @ingredients_required.keys
   end
 
-
-
+  def total_calories
+     @ingredients_required.sum {|ingredient, quantity| ingredient.calories * quantity}
+  end
 end

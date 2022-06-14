@@ -1,5 +1,7 @@
-require './lib/ingredient'
 require './lib/pantry'
+require './lib/ingredient'
+require './lib/recipe'
+require './lib/cook_book'
 
 RSpec.describe Ingredient do
   before :each do
@@ -21,7 +23,4 @@ RSpec.describe Ingredient do
     expect(@ingredient1.calories).to eq(50)
     expect(@ingredient2.calories).to eq(200)
   end
-
-
-
 end

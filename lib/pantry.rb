@@ -12,6 +12,7 @@ class Pantry
     @stock[ingredient] += quantity
   end
 
-
-
+  def enough_ingredients_for?(recipe)
+    require "pry"; binding.pry
+  end
 end
