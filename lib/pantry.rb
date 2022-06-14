@@ -4,11 +4,11 @@ class Pantry
         @stock = {}
     end
 
-    def restock(ingredient, qty)
-        @stock[ingredient] = qty
-    end
-
     def stock_check(ingredient)
         @stock[ingredient]
+    end
+
+    def restock(ingredient, qty)
+        @stock.merge!({ingredient => qty}) { |key, oldval, newval| oldval + newval }
     end
 end
