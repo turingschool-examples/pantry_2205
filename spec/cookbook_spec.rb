@@ -44,4 +44,17 @@ RSpec.describe CookBook do
       expect(@cookbook.ingredients).to eq expected_array
     end
   end
+
+  describe '#highest_calorie_meal' do
+    it 'returns the meal with the highest calories' do
+      @recipe1.add_ingredient(@ingredient1, 2)
+      @recipe1.add_ingredient(@ingredient2, 8)
+      @recipe2.add_ingredient(@ingredient1, 2)
+      @recipe2.add_ingredient(@ingredient3, 4)
+      @recipe2.add_ingredient(@ingredient4, 1)
+      @cookbook.add_recipe(@recipe1)
+      @cookbook.add_recipe(@recipe2)
+      expect(@cookbook.highest_calorie_meal).to eq @recipe2
+    end
+  end
 end
