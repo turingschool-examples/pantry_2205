@@ -24,4 +24,8 @@ RSpec.describe CookBook do
   it 'exists' do
     expect(@cookbook).to be_a(CookBook)
   end
+
+  it 'has a recipes array' do
+    expect(@cookbook.recipes).to eq([])
+  end
 end
