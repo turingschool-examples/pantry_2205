@@ -14,8 +14,10 @@ class Recipe
   end
 
   def total_calories
-    calories = @ingredients.map do |ingredient|
-      require "pry"; binding.pry
+    calories = 0
+    @ingredients_required.each do |key, value|
+      calories += (key.calories * value)
     end
+    calories
   end
 end
