@@ -5,4 +5,8 @@ class Recipe
         @name = name
         @ingredients_required = {}
     end
+
+    def add_ingredient(ingredient, qty)
+        @ingredients_required.merge!({ingredient => qty}) { |key, oldval, newval| oldval + newval }
+    end
 end

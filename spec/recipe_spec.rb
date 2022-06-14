@@ -21,7 +21,7 @@ RSpec.describe 'Recipe' do
         mac.add_ingredient(cheese, 2)
         mac.add_ingredient(cheese, 4)
         mac.add_ingredient(macaroni, 8)
-        expect(mac.ingredients_required).to eq({cheese: 6, macaroni: 8})
+        expect(mac.ingredients_required).to eq({cheese => 6, macaroni => 8})
     end
 
 end
