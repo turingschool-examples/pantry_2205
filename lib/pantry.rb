@@ -1,4 +1,5 @@
 require './lib/ingredient'
+require './lib/recipe'
 
 class Pantry
   attr_reader :stock
@@ -21,5 +22,14 @@ class Pantry
     else
       @stock[ingredient] = quantity
     end
+  end
+
+  def enough_ingredients_for?(recipe)
+    recipe.ingredients_required.each do |ingredient, quantity|
+      if stock_check(ingredient) < quantity
+        return false
+      end
+    end
+    return true
   end
 end
