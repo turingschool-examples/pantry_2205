@@ -34,4 +34,13 @@ RSpec.describe Recipe do
       )
     end
   end
+
+  describe '#ingredients' do
+    it 'can return an array of the Ingredient objects in ingredients_required' do
+      @recipe1.add_ingredient(@ingredient1, 2)
+      expect(@recipe1.ingredients).to eq [@ingredient1]
+      @recipe1.add_ingredient(@ingredient2, 8)
+      expect(@recipe1.ingredients).to eq [@ingredient1, @ingredient2]
+    end
+  end
 end
