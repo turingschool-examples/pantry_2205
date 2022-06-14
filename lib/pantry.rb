@@ -14,6 +14,6 @@ class Pantry
   end
 
   def enough_ingredients_for?(recipe)
-    recipe.ingredients_required.values.sum > @stock.values.sum
+    recipe.ingredients_required.values.sum >= @stock.values.sum
   end
 end
