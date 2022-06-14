@@ -28,4 +28,11 @@ RSpec.describe Recipe do
     expect(@recipe1.name).to eq("Mac and Cheese")
     expect(@recipe2.name).to eq("Cheese Burger")
   end
+
+  it 'can add ingredients to recipe' do
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient1, 4)
+    @recipe1.add_ingredient(@ingredient2, 8)
+    expect(@recipe1.ingredients_required).to eq(@ingredient1 => 6, @ingredient2 => 8)
+  end
 end
