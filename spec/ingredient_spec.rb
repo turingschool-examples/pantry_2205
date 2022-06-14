@@ -8,6 +8,11 @@ RSpec.describe Ingredient do
       name: "Cheese",
       unit: "oz",
       calories: 50})
+
+    @ingredient2 = Ingredient.new({
+      name: "Macaroni",
+      unit: "oz",
+      calories: 200})
   end
 
   it 'exists' do
