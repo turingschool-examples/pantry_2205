@@ -40,14 +40,14 @@ RSpec.describe Pantry do
     @pantry.restock(@ingredient1, 5)
     @pantry.restock(@ingredient1, 10)
 
-    expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(False)
+    expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(false)
 
     @pantry.restock(@ingredient2, 7)
 
-    expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(False)
+    expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(false)
 
     @pantry.restock(@ingredient2, 1)
 
-    expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(True)
+    expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(true)
   end
 end
