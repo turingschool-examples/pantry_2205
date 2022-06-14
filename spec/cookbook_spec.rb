@@ -69,4 +69,33 @@ RSpec.describe CookBook do
     expect(@cookbook.date).to eq("06-14-2022")
   end
 
+  it 'returns summary' do
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient2, 8)
+
+    @recipe2.add_ingredient(@ingredient1, 2)
+    @recipe2.add_ingredient(@ingredient3, 4)
+    @recipe2.add_ingredient(@ingredient4, 100)
+
+    expect(@cookbook.summary).to eq(
+      [{:name=>"Mac and Cheese",
+        :details=>
+          {:ingredients=>
+            [{:ingredient=>"Macaroni",
+              :amount=>"8 oz"}, {:ingredient=>"Cheese",
+              :amount=>"2 C"}],
+          :total_calories=>440}
+        },
+      {:name=>"Burger",
+        :details=>
+          {:ingredients=>
+            [{:ingredient=>"Ground Beef",
+              :amount=>"4 oz"},
+              {:ingredient=>"Bun",
+                :amount=>"100 g"}],
+        :total_calories=>500}
+        }]
+      )
+  end
+
 end
