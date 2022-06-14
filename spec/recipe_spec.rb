@@ -1,6 +1,5 @@
 require "rspec"
 require "./lib/ingredient"
-# require "./lib/pantry"
 require "./lib/recipe"
 
 RSpec.describe Recipe do
