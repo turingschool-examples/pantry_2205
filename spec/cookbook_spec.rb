@@ -44,8 +44,8 @@ RSpec.describe CookBook do
       @recipe2.add_ingredient(@ingredient4, 1)
       @cookbook.add_recipe(@recipe1)
       @cookbook.add_recipe(@recipe2)
-      @pantry.restock(ingredient1, 5)
-      @pantry.restock(ingredient1, 10)
+      @pantry.restock(@ingredient1, 5)
+      @pantry.restock(@ingredient1, 10)
 
     end
 
@@ -60,6 +60,14 @@ RSpec.describe CookBook do
 
     it 'can show highest calorie meal' do
       expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
+    end
+
+    it 'can tell if enough ingredients for something' do
+      expect(@pantry.enough_ingredients_for?(@recipe1)).to be(false)
+      @pantry.restock(@ingredient2, 7)
+      expect(@pantry.enough_ingredients_for?(@recipe1)).to be(false)
+      @pantry.restock(@ingredient2, 1)
+      expect(@pantry.enough_ingredients_for?(@recipe1)).to be(true)
     end
   end
 end
