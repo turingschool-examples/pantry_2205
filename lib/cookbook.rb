@@ -18,8 +18,8 @@ class CookBook
     all_ing.flatten.map(&:name).uniq
   end
 
-  # def highest_calorie_meal
-  # 
-  # end
+  def highest_calorie_meal
+    @recipes.sort_by(&:total_calories).last
+  end
 
 end
