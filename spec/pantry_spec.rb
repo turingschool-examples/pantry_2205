@@ -69,6 +69,7 @@ RSpec.describe Pantry do
 
 			expect(pantry.enough_ingredients_for?(recipe1)).to eq(true)
 		end
+		
 	end
 
 end

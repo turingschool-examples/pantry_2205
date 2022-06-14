@@ -1,6 +1,7 @@
 require './lib/recipe'
 require './lib/cookbook'
 require './lib/ingredient'
+require 'date'
 
 RSpec.describe CookBook do
 	describe 'Iteration 2' do
@@ -97,6 +98,15 @@ RSpec.describe CookBook do
 			expect(cookbook.highest_calorie_meal).to eq(recipe2)
 		end
 
+	end
+
+	describe 'Iteration 4' do
+
+		it 'can provide the date the cookbook is created' do
+			cookbook = CookBook.new
+
+			expect(cookbook.date).to eq(Date.today.strftime("%m-%e-%Y"))
+		end
 	end
 
 end

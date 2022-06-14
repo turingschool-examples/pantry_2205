@@ -1,3 +1,5 @@
+require 'date'
+
 class CookBook
 
 	attr_reader :recipes
@@ -36,6 +38,10 @@ class CookBook
 			end
 		end
 		return highest_calorie_meal[0]
+	end
+
+	def date
+		Date.today.strftime("%m-%e-%Y")
 	end
 
 
