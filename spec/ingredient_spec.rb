@@ -16,9 +16,9 @@ RSpec.describe Class do
 			expect(@ingredient1.name).to eq("Cheese")
       expect(@ingredient1.unit).to eq("oz")
       expect(@ingredient1.calories).to eq(50)
-      expect(@ingredient1.name).to eq("Macaroni")
-      expect(@ingredient1.unit).to eq("oz")
-      expect(@ingredient1.calories).to eq(200)
+      expect(@ingredient2.name).to eq("Macaroni")
+      expect(@ingredient2.unit).to eq("oz")
+      expect(@ingredient2.calories).to eq(200)
     end
 	end
 end
