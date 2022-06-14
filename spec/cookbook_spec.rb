@@ -17,5 +17,12 @@ RSpec.describe CookBook do
 		it "starts with no recipes" do
 			expect(@cookbook.recipes).to eq([])
     end
+
+    it "can add recipes" do
+      @cookbook.add_recipe(@recipe1)
+      @cookbook.add_recipe(@recipe2)
+
+      expect(@cookbook.recipes).to eq([@recipe1, @recipe2])
+    end
 	end
 end
