@@ -13,13 +13,15 @@ class Pantry
     end
 
     def nil_check(ingredient)
-        false if @stock[ingredient].nil?
+        @stock[ingredient].nil?
     end
 
     def enough_ingredients?(recipe)
         recipe.ingredients_required.all? do |ingredient|
-            return false if nil_check(ingredient) == false
-            @stock[ingredient] >= recipe.ingredients_required[ingredient]
+
+            # return false if nil_check(ingredient) == true
+            # require 'pry'; binding.pry 
+            (@stock[ingredient] >= recipe.ingredients_required[ingredient]) || false
             # require 'pry'; binding.pry 
             # if stock_check(ingredient) != nil
             #     stock_check(ingredient) >= recipe.ingredients_required[ingredient]
