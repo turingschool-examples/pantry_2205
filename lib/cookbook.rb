@@ -34,5 +34,13 @@ class CookBook
     @recipes.find {|recipe| recipe.total_calories == calories.max}
   end
 
+  def summary
+    
+  end
+
+  def date
+
+  end
+
 
 end
