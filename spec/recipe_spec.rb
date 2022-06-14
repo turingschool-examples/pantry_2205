@@ -40,4 +40,24 @@ RSpec.describe Recipe do
     @recipe1.add_ingredient(@ingredient2, 8)
     expect(@recipe1.ingredients).to eq([@ingredient1, @ingredient2])
   end
+
+  it 'can calculate total calories of a recipe' do
+    ingredient3 = Ingredient.new({
+      name: "Ground Beef",
+      unit: "oz",
+      calories: 100
+      })
+    ingredient4 = Ingredient.new({
+      name: "Bun",
+      unit: "g",
+      calories: 75
+      })
+      @recipe1.add_ingredient(@ingredient1, 2)
+      @recipe1.add_ingredient(@ingredient2, 8)
+      @recipe2.add_ingredient(@ingredient1, 2)
+      @recipe2.add_ingredient(ingredient3, 4)
+      @recipe2.add_ingredient(ingredient4, 1)
+    expect(@recipe1.total_calories).to eq(440)
+    expect(@recipe2.total_calories).to eq(675)
+  end
 end
