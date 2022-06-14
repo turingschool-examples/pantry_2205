@@ -1,3 +1,4 @@
+require 'date'
 require 'pantry'
 require 'ingredient'
 require 'recipe'

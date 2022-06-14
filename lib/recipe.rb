@@ -18,6 +18,11 @@ class Recipe
         @ingredients_required.keys.map {|ingredient| ingredient.name}
     end
 
-
+    def format_ingredients
+        details = {}
+        @ingredients_required.map do |ingredient, qty|
+            details[:ingredients] = {name: ingredient.name, amount: "#{qty} #{ingredient.unit}"}
+        end
+    end
 
 end

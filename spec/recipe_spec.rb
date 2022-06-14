@@ -29,7 +29,7 @@ RSpec.describe 'Recipe' do
         expect(mac.ingredients_required).to eq({cheese => 6, macaroni => 8})
     end
 
-    it 'has a total calories' do
+    it 'can return total calories' do
         mac.add_ingredient(c_cheese, 2)
         mac.add_ingredient(less_macaroni, 8)
         expect(mac.total_calories).to eq(440)
@@ -39,5 +39,5 @@ RSpec.describe 'Recipe' do
         expect(burger.total_calories).to eq(675)
     end
 
-    
+
 end

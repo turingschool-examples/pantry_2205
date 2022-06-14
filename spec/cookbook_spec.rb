@@ -51,8 +51,7 @@ RSpec.describe 'Cookbook' do
     end
 
     it 'has a published date' do
-        expect(cookbook.date).to eq(nil)
-        cookbook.date = "06-14-2022"
+        expect(cookbook.date).to eq("06-14-2022")
     end
     
     it 'can list a recipe summary in order of calories' do
@@ -63,5 +62,25 @@ RSpec.describe 'Cookbook' do
         burger.add_ingredient(beef, 4)
         burger.add_ingredient(bun, 1)
         cookbook.add_recipe(burger)
-        expect(cookbook.recipe_summary).to eq("Cheese Burger: 467 calories\nMac and Cheese: 440 calories")
+        expect(cookbook.summary).to eq([{
+            :name=>"Mac and Cheese", 
+            :details=>{
+                :ingredients=>[{
+                    :ingredient=>"Macaroni", 
+                    :amount=>"8 oz"}, 
+                    {:ingredient=>"Cheese", 
+                    :amount=>"2 C"}], 
+                :total_calories=>440
+            }}, 
+            {:name=>"Burger", 
+            :details=>{
+                :ingredients=>[{
+                    :ingredient=>"Ground Beef", 
+                    :amount=>"4 oz"}, 
+                    {:ingredient=>"Bun", 
+                    :amount=>"100 g"
+                }], 
+                :total_calories=>500
+        }}])
+    end
 end
