@@ -1,6 +1,7 @@
 require_relative 'ingredient'
 require_relative 'pantry'
 require_relative 'recipe'
+require 'time'
 
 
 class CookBook
@@ -54,6 +55,7 @@ class CookBook
   end
 
   def time
-
+    current_time = DateTime.now
+    current_time.strftime("%d/%m/%Y")
   end
 end

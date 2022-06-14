@@ -2,6 +2,7 @@ require './lib/ingredient'
 require './lib/pantry'
 require './lib/recipe'
 require './lib/cookbook'
+require 'time'
 
 RSpec.describe CookBook do
   before(:each) do
@@ -75,7 +76,8 @@ RSpec.describe CookBook do
   end
 
   it 'returns the time the cookbook was created' do
-    expect(@cookbook.date).to eql()
+    current_time = DateTime.now
+    expect(@cookbook.time).to eql(current_time.strftime("%d/%m/%Y"))
   end
 
 end
