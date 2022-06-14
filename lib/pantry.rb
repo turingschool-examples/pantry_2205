@@ -1,5 +1,5 @@
 class Pantry
-    attr_reader :ingredients
+    attr_reader :stock
     def initialize
         @stock = {}
     end
