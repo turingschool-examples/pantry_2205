@@ -1,19 +1,21 @@
 require "rspec"
-require "./lib/class"
+require "./lib/recipe"
+require "./lib/cookbook"
 
-RSpec.describe Class do
-	describe "Iteration 1" do
+RSpec.describe CookBook do
+	describe "Iteration 2" do
 		before :each do
-			@
-			@
+      @recipe1 = Recipe.new("Mac and Cheese")
+			@recipe2 = Recipe.new("Cheese Burger")
+      @cookbook = CookBook.new
 		end
 
 		it "exists" do
-			expect(@class).to be_a(Class)
+			expect(@cookbook).to be_a(CookBook)
 		end
 
-		it "has attributes" do
-			expect(@class.attribute).to eq()
+		it "starts with no recipes" do
+			expect(@cookbook.recipes).to eq([])
     end
 	end
 end
