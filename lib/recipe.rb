@@ -28,4 +28,19 @@ class Recipe
     @ingredients_required.sum {|ingredient,amount| ingredient.calories * amount }
   end
 
+  def ingredient_summary
+    return_array = []
+
+    @ingredients_sorted_by_calories = @ingredients_required.sort_by {|ingredient,amount| ingredient.calories * amount}.reverse
+
+    @ingredients_sorted_by_calories.each do |ingredient,amount|
+      return_array << {
+        :ingredient => ingredient.name,
+        :amount => "#{amount} #{ingredient.unit}"
+      }
+    end
+    # binding.pry
+    return_array
+  end
+
 end
