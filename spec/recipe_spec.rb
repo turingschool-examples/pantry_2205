@@ -5,6 +5,7 @@ RSpec.describe Recipe do
     @ingredient1 = Ingredient.new({name: 'Cheese', unit: 'C', calories: 100})
     @ingredient2 = Ingredient.new({name: 'Macaroni', unit: 'oz', calories: 30})
     @recipe1 = Recipe.new('Mac and Cheese')
+    recipe2 = Recipe.new("Cheese Burger")
   end
 
   describe '#initialize' do
