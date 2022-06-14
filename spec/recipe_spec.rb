@@ -1,6 +1,6 @@
 require './lib/helper'
 
-RSpec.decribe Recipie do
+RSpec.describe Recipe do
 
   before do
     @ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
@@ -13,7 +13,7 @@ RSpec.decribe Recipie do
     expect(@recipe1.name).to eq("Mac and Cheese")
   end
 
-  xit 'can return empty hash of required ingredients'do
+  it 'can return empty hash of required ingredients'do
     expect(@recipe1.ingredients_required).to eq({})
   end
 
