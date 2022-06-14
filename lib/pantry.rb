@@ -14,7 +14,7 @@ class Pantry
 
     def enough_ingredients?(recipe)
         recipe.ingredients_required.all? do |ingredient|
-            @stock[ingredient] >= recipe.ingredients_required[ingredient]
+            # @stock[ingredient] >= recipe.ingredients_required[ingredient]
             # require 'pry'; binding.pry 
             # if stock_check(ingredient) != nil
             #     stock_check(ingredient) >= recipe.ingredients_required[ingredient]
@@ -22,7 +22,7 @@ class Pantry
             #     false
             # end
              
-            # stock_check(ingredient).nil? ? false : stock_check(ingredient) >= recipe.ingredients_required[ingredient]
+            nil == @stock[ingredient] ? false : stock_check(ingredient) >= recipe.ingredients_required[ingredient]
         end
     end
 end
