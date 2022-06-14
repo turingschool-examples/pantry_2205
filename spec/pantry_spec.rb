@@ -14,17 +14,17 @@ RSpec.describe Pantry do
 	end
 
   it 'can check stock' do
-    expect(pantry.stock).to eq({})
-    expect(pantry.stock_check(ingredient1)).to eq(0)
+    expect(@pantry.stock).to eq({})
+    expect(@pantry.stock_check(@ingredient1)).to eq(0)
   end
 
   it 'can restock items' do
-    pantry.restock(ingredient1, 5)
-    pantry.restock(ingredient1, 10)
+    @pantry.restock(@ingredient1, 5)
+    @pantry.restock(@ingredient1, 10)
 
-    expect(pantry.stock_check(ingredient1)).to eq(15)
+    expect(@pantry.stock_check(@ingredient1)).to eq(15)
 
-    pantry.restock(ingredient2, 7)
-    expect(pantry.stock_check(ingredient2)).to eq(7)
+    @pantry.restock(@ingredient2, 7)
+    expect(@pantry.stock_check(@ingredient2)).to eq(7)
   end
 end
