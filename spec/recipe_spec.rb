@@ -35,7 +35,6 @@ RSpec.describe Recipe do
 
   it 'can count total calories' do
     @recipe1.add_ingredient(@ingredient1, 2)
-    @recipe1.add_ingredient(@ingredient1, 4)
     @recipe1.add_ingredient(@ingredient2, 8)
     @recipe2.add_ingredient(@ingredient1, 2)
     @recipe2.add_ingredient(@ingredient3, 4)
