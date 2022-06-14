@@ -64,6 +64,8 @@ RSpec.describe CookBook do
   end
 
   it 'returns date' do
+    allow(@cookbook).to receive(:date).and_return("06-14-2022")
+
     expect(@cookbook.date).to eq("06-14-2022")
   end
 
