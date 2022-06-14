@@ -6,4 +6,8 @@ RSpec.describe 'Ingredient' do
     it 'exists' do
         expect(cheese).to be_instance_of(Ingredient)
     end
+
+    it 'has a name' do
+        expect(cheese.name).to eq("Cheese")
+    end
 end
