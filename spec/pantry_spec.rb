@@ -26,4 +26,10 @@ RSpec.describe Pantry do
       expect(@pantry.stock).to eq ({})
     end
   end
+
+  describe '#stock_check' do
+    it 'returns the quantity of an ingredient in the stock hash' do
+      expect(@pantry.stock_check(@ingredient1)).to eq 0
+    end
+  end
 end
