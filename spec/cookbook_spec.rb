@@ -57,4 +57,10 @@ RSpec.describe CookBook do
       expect(@cookbook.highest_calorie_meal).to eq @recipe2
     end
   end
+
+  describe '#date' do
+    it 'stores the date that a CookBook was created' do
+      expect(@cookbook.date).to be_a String
+    end
+  end
 end
