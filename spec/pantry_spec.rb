@@ -23,7 +23,7 @@ RSpec.describe Pantry do
     end
 
     it 'initializes with an empty hash of stock' do
-      expect(@pantry.stock).to eq {}
+      expect(@pantry.stock).to eq ({})
     end
   end
 end
