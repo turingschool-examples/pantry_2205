@@ -89,5 +89,8 @@ RSpec.describe Cookbook do
   #            :total_calories=>500}}])
   # end
 
-  it
+  it "can return the date" do
+    cookbook = Cookbook.new
+    expect(cookbook.date).to eq(Date.today)
+  end
 end
