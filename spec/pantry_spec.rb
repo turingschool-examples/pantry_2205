@@ -16,7 +16,7 @@ RSpec.describe Pantry do
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 200})
 
     expect(pantry.stock).to eq({})
-    expect(pantry.stock_check).to eq(0)
+    expect(pantry.stock_check(ingredient1)).to eq(0)
 
     pantry.restock(ingredient1, 5)
     pantry.restock(ingredient1, 10)

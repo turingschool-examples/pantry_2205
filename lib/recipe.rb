@@ -17,6 +17,6 @@ class Recipe
   end
 
   def total_calories
-    @ingredients_required.map { |ingredient, quantity| ingredient.calories * quantity }
+    @ingredients_required.flat_map { |ingredient, quantity| ingredient.calories * quantity }
   end
 end
