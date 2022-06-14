@@ -1,8 +1,8 @@
 require './lib/ingredient'
 require './lib/recipe'
-require './lib/cook_book'
+require './lib/cookbook'
 
-RSpec.describe Cookbook do
+RSpec.describe CookBook do
   before :each do
     @cookbook = CookBook.new
     @recipe1 = Recipe.new("Mac and Cheese")
@@ -10,7 +10,7 @@ RSpec.describe Cookbook do
   end
 
   it 'exists' do
-    expect(@cookbook).to be_a(Cookbook)
+    expect(@cookbook).to be_a(CookBook)
   end
 
   it 'can add recipes and put them in an array' do
