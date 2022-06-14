@@ -37,4 +37,16 @@ RSpec.describe 'Cookbook' do
         cookbook.add_recipe(burger)
         expect(cookbook.ingredients).to eq(["Cheese", "Macaroni", "Ground Beef", "Bun"])
     end
+
+    it 'can list highest calorie meal' do
+        expect(cookbook.highest_calorie_meal).to eq(nil)
+        mac.add_ingredient(c_cheese, 2)
+        mac.add_ingredient(less_macaroni, 8)
+        cookbook.add_recipe(mac)
+        burger.add_ingredient(c_cheese, 2)
+        burger.add_ingredient(beef, 4)
+        burger.add_ingredient(bun, 1)
+        cookbook.add_recipe(burger)
+        expect(cookbook.highest_calorie_meal).to eq(burger)
+    end
 end
