@@ -25,5 +25,14 @@ class CookBook
     all_ingredients.uniq
   end
 
+  def highest_calorie_meal #come back to to get non array returned
+    calories = []
+    @recipes.each do |recipe|
+      calories << recipe.total_calories
+    end
+    calories.max
+    @recipes.find {|recipe| recipe.total_calories == calories.max}
+  end
+
 
 end
