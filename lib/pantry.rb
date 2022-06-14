@@ -14,4 +14,12 @@ class Pantry
     end
     count
   end
+
+  def restock(ingredient, quantity)
+    if @stock.keys.include?(ingredient)
+      @stock[ingredient] += quantity
+    else
+      @stock[ingredient] = quantity
+    end
+  end
 end
