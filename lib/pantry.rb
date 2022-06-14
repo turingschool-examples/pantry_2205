@@ -23,5 +23,4 @@ class Pantry
       false
     end
   end
-
 end

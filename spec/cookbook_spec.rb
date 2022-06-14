@@ -102,7 +102,6 @@ RSpec.describe CookBook do
     end
 
     it 'has a summary' do
-      # require "pry"; binding.pry
       expect(@cookbook.summary).to eq(@expected_sum)
     end
   end

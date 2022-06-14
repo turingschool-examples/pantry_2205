@@ -18,5 +18,4 @@ class Recipe
   def total_calories
     @ingredients_required.sum { |ing,amt| ing.calories * amt }
   end
-
 end

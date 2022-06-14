@@ -51,5 +51,4 @@ class CookBook
     sum_array.first[:details][:ingredients].rotate!
     sum_array
   end
-
 end

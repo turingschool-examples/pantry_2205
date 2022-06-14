@@ -7,5 +7,4 @@ class Ingredient
     @unit = attributes[:unit]
     @calories = attributes[:calories]
   end
-
 end
