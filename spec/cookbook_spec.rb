@@ -49,4 +49,19 @@ RSpec.describe 'Cookbook' do
         cookbook.add_recipe(burger)
         expect(cookbook.highest_calorie_meal).to eq(burger)
     end
+
+    it 'has a published date' do
+        expect(cookbook.date).to eq(nil)
+        cookbook.date = "06-14-2022"
+    end
+    
+    it 'can list a recipe summary in order of calories' do
+        mac.add_ingredient(c_cheese, 2)
+        mac.add_ingredient(less_macaroni, 8)
+        cookbook.add_recipe(mac)
+        burger.add_ingredient(c_cheese, 2)
+        burger.add_ingredient(beef, 4)
+        burger.add_ingredient(bun, 1)
+        cookbook.add_recipe(burger)
+        expect(cookbook.recipe_summary).to eq("Cheese Burger: 467 calories\nMac and Cheese: 440 calories")
 end
