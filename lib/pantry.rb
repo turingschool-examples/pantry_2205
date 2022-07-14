@@ -14,6 +14,7 @@ class Pantry
   end
 
   def enough_ingredients_for?(recipe)
-    @stock.include?(@ingredients_required)
+    needed = recipe.ingredients_required.select { |ingredient, qty| qty > @stock[ingredient] }
+    needed.empty?
   end
 end
