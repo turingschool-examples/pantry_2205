@@ -19,4 +19,9 @@ class Recipe
   def total_calories
     @ingredients_required.sum { |ingredient, quantity| ingredient.calories * quantity }
   end
+
+  def ingredients_by_calories
+    list = @ingredients_required.sort_by { |ingredient, quantity | ingredient.calories * quantity }
+    list.reverse
+  end
 end

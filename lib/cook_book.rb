@@ -22,4 +22,27 @@ class CookBook
   def highest_calorie_meal
     @recipes.max { |recipe| recipe.total_calories }
   end
+
+  def summary
+    answer = []
+    recipes.each do |recipe|
+      answer << recipe_hash(recipe)
+    end
+    answer
+  end
+
+  def recipe_hash(recipe)
+    recipe_hash = {}
+    recipe_hash[:name] = recipe.name
+    recipe_hash[:details] = {}
+    recipe_hash[:details][:ingredients] = []
+    recipe.ingredients_by_calories.each do |ingredient, qty|
+      hash = {ingredient: ingredient.name,
+              amount: qty.to_s + " " + ingredient.unit
+            }
+    recipe_hash[:details][:ingredients] << hash
+    end
+    recipe_hash[:details][:total_calories] = recipe.total_calories
+    recipe_hash
+  end
 end
