@@ -78,4 +78,10 @@ RSpec.describe CookBook do
 
     expect(cookbook.summary).to eq([{:name=>"Mac and Cheese", :details=>{:ingredients=>[{:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}], :total_calories=>440}}, {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}])
   end
+
+  it 'gives the current date' do
+    cookbook = CookBook.new
+    
+    expect(cookbook.date).to eq(Date.today.strftime('%m-%d-%Y'))
+  end
 end
