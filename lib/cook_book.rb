@@ -41,7 +41,7 @@ class CookBook
     recipe.ingredients_by_calories.each do |ingredient, qty|
       hash = {ingredient: ingredient.name,
               amount: qty.to_s + " " + ingredient.unit
-            }
+              }
     recipe_hash[:details][:ingredients] << hash
     end
     recipe_hash[:details][:total_calories] = recipe.total_calories
